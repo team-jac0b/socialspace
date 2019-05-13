@@ -1,3 +1,19 @@
+import processing.core.*; 
+import processing.data.*; 
+import processing.event.*; 
+import processing.opengl.*; 
+
+import java.util.HashMap; 
+import java.util.ArrayList; 
+import java.io.File; 
+import java.io.BufferedReader; 
+import java.io.PrintWriter; 
+import java.io.InputStream; 
+import java.io.OutputStream; 
+import java.io.IOException; 
+
+public class TreeAnimation extends PApplet {
+
 float theta;
 int level = 0;
 int scale = 50;
@@ -22,15 +38,15 @@ String[] prompts = {"Do you have any big plans for the summer? (Keep it hopeful)
 int[] leafX = {135, 339, 275, 127, 328, 391, 59, 134, 442, 268};
 int[] leafY = {573, 526, 319, 428, 435, 378, 526, 373, 528, 391};
 
-void setup() {
-  size(1280, 800);
+public void setup() {
+  
   textSize(50);
   keywords = new ArrayList<String>();
   leaf = loadImage("Leaf.png");
   tree = loadImage("Tree.png");
 }
 
-void keyPressed() {
+public void keyPressed() {
   if (keyCode == LEFT || keyCode == RIGHT || keyCode == DOWN) {
     if (keyCode == LEFT) {
       if (level > 0) {
@@ -64,17 +80,17 @@ void keyPressed() {
   }
 }
 
-void draw() {
+public void draw() {
   // #4286f4
-  background(#FFFFFF);
+  background(0xffFFFFFF);
   frameRate(30);
-  fill(#472f18);
+  fill(0xff472f18);
   for (int i = 0; i < keywords.size(); i++) {
     text(keywords.get(i), ((i + 1) * 150) % 1200, 100 * ((i / 5) + 1));
   }
   //text(typing, 50, 50);
   drawTrees();
-  stroke(#472f18);
+  stroke(0xff472f18);
   strokeWeight(50);
 
   textSize(24);
@@ -97,7 +113,7 @@ void draw() {
 
 }
 
-void drawTrees() {
+public void drawTrees() {
   pushMatrix();
   translate(550,0);
   scale(-1,1); // You had it right!
@@ -115,7 +131,7 @@ void drawTrees() {
 
 }
 
-void drawLeaf(int x, int y, int rotation) {
+public void drawLeaf(int x, int y, int rotation) {
   pushMatrix();
   translate(x,y);
   rotate(radians(rotation));
@@ -125,12 +141,12 @@ void drawLeaf(int x, int y, int rotation) {
   popMatrix();
 }
 
-void branch(float h, float s, float num) {
+public void branch(float h, float s, float num) {
   // Each branch will be 2/3rds the size of the previous one
-  h *= 0.66;
+  h *= 0.66f;
 
   // Each branch gets smaller
-  s *= 0.7;
+  s *= 0.7f;
 
   num--;
 
@@ -155,4 +171,14 @@ void branch(float h, float s, float num) {
     popMatrix();
   }
 
+}
+  public void settings() {  size(1280, 800); }
+  static public void main(String[] passedArgs) {
+    String[] appletArgs = new String[] { "TreeAnimation" };
+    if (passedArgs != null) {
+      PApplet.main(concat(appletArgs, passedArgs));
+    } else {
+      PApplet.main(appletArgs);
+    }
+  }
 }
