@@ -18,6 +18,8 @@ float theta;
 int level = 0;
 int scale = 50;
 int prompt = 0;
+int rectx = 0;
+int recty = 205;
 PImage leaf;
 PImage tree;
 
@@ -90,13 +92,15 @@ public void draw() {
   }
   //text(typing, 50, 50);
   drawTrees();
+  //rectangle(0, 205, 600, 600);
+
   stroke(0xff472f18);
   strokeWeight(50);
 
   textSize(24);
-  text(prompts[prompt], 300, 594);
+  text(prompts[prompt], 300, 640);
 
-  // print(mouseX + ", " + mouseY + "\n");
+  //print(mouseX + ", " + mouseY + "\n");
 
   // Let's pick an angle 0 to 90 degrees based on the mouse position
   float a = 30;
@@ -117,14 +121,14 @@ public void drawTrees() {
   pushMatrix();
   translate(550,0);
   scale(-1,1); // You had it right!
-  image(tree,30,250, 500, 500);
+  image(tree,50,250, 500, 500);
+  //image(tree,-50,250, 1000, 1000);
   popMatrix();
 
   image(tree, 750, 250, 500, 500);
 
   text("ALLEN", 325, 750);
   text("GATES", 790, 750);
-
   for (int i = 0; i < level * 2; i++) {
     drawLeaf(leafX[i], leafY[i], 0);
   }
