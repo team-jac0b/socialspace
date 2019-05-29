@@ -1,0 +1,152 @@
+import mqtt.*;
+
+MQTTClient client;
+PFont font;
+
+float theta;
+int level = 0;
+int prompt = 0;
+int rectx = 0;
+int recty = 205;
+
+String saved = "";
+String typing = "";
+
+Boolean drawLeaves = true;
+
+ArrayList<Word> keywords;
+String[] prompts = {"Do you have any big plans for\n the summer? (Keep it hopeful)",
+                    "What are you up to for the summer?",
+                    "Among your friends, what are you best known for?",
+                    "What’s an interesting adventure you’ve been on?",
+                    "What’s your most memorable trip?",
+                    "What is the best sound in the world?",
+                    "What is your favorite show or movie to Netflix?",
+                    "If you could be any ice cream flavor, \nwhat would you be and why?",
+                    "Top thing on your bucket list",
+                    "What’s your favorite thing about your best friend?"};
+
+void setup() {
+  size(1200, 800);
+  keywords = new ArrayList<Word>();
+  client = new MQTTClient(this);
+  client.connect("mqtt://test.mosquitto.org");
+  client.subscribe("uwsocialspace54321");
+  font = createFont("Roboto-Regular.ttf", 32);
+  textFont(font);
+}
+
+void keyPressed() {
+  if (keyCode == LEFT || keyCode == RIGHT || keyCode == DOWN) {
+    if (keyCode == LEFT) {
+      if (level > 0) {
+        //level--;
+      }
+    }
+    if (keyCode == RIGHT) {
+      if (level < 6) {
+        //level++;
+      }
+    }
+    if (keyCode == DOWN) {
+      if (prompt != 9) {
+        prompt++;
+      } else {
+        prompt = 0;
+      }
+      keywords = new ArrayList<Word>();
+    }
+
+  } else {
+    if (key == '\n' ) {
+      keywords.add(new Word(typing));
+      client.publish("/test", "hiya");
+      // A String can be cleared by setting it equal to ""
+      typing = "";
+    } else if (key ==';') {
+      typing = "";
+    } else {
+      // Otherwise, concatenate the String
+      // Each character typed by the user is added to the end of the String variable.
+      typing = typing + key;
+    }
+
+  }
+
+}
+
+void draw() {
+  // #4286f4
+  background(#000000);
+  frameRate(30);
+  fill(#FFFFFF);
+  for (int i = 0; i < keywords.size(); i++) {
+    keywords.get(i).drawWord();
+  }
+  //drawGrid();
+  // Draws the labels for each installation
+  textSize(12);
+  text("Installation in", 51, 720);
+  text("Installation in", 1056, 720);
+
+  textSize(24);
+  text("Gates", 51, 750);
+  text("Allen", 1056, 750);
+
+  text(prompts[prompt], 425, 332);
+
+  //println(mouseX + ", " + mouseY + "\n");
+}
+
+// Draws a grid for help with seeing how wide text is
+void drawGrid() {
+  fill(#FFFFFF);
+  stroke(#FFFFFF);
+  for (int i = 0; i < 800; i+=10) {
+    line(0, i, 1200, i);
+  }
+  for (int i = 0; i < 1200; i+=10) {
+    line(i, 0, i, 800);
+  }
+}
+
+void messageReceived(String topic, byte[] payload) {
+  println("new message: " + topic + " - " + new String(payload));
+}
+
+// Class for a word
+
+class Word {
+  String word;
+  int occurrences;
+  int topLeftX;
+  int topLeftY;
+  int botRightX;
+  int botRightY;
+  int size;
+
+  Word(String word) {
+    this.word = word;
+    this.occurrences = 1;
+    updateSize();
+  }
+
+  Word(String word, int occurrences) {
+    this.word = word;
+    this.occurrences = occurrences;
+    updateSize();
+  }
+
+  void updateSize() {
+    // Update the position markers for the word based on what the word is + num of ocurrences
+    topLeftX = 50;
+    topLeftY = 50;
+    size = 20;
+  }
+
+  // draws the word on the canvas with values stored in the fields
+  void drawWord() {
+    textSize(size);
+    text(word, topLeftX, topLeftY);
+  }
+}

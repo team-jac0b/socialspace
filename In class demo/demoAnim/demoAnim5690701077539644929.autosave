@@ -1,0 +1,181 @@
+import mqtt.*;
+
+MQTTClient client;
+PFont font;
+
+color summer1 = #EBB2B5;
+color summer2 = #8ABABA;
+
+color sound1 = #5B75B2;
+color sound2 = #EADEBB;
+
+color show1 = #CD6557;
+color show2 = #A6B896;
+
+color adventure1 = #687934;
+color adventure2 = #DD9F4B;
+
+color iceCream1 = #EEDED4;
+color iceCream2 = #DE7EA8;
+
+
+String saved = "";
+String typing = "";
+
+int currPrompt; // 0 - Summer, 1 - Adventure, 2 - Sound, 3 - Show, 4 - Flavor
+
+Animation summerAnim, adventureAnim, soundAnim, showAnim, flavorAnim;
+
+ArrayList<Word> summerWords;
+ArrayList<Word> adventureWords;
+ArrayList<Word> soundWords;
+ArrayList<Word> showWords;
+ArrayList<Word> flavorWords;
+
+String[] prompts = {"What are you up to for the summer?",
+                    "What’s an interesting adventure you’ve been on?",
+                    "What is the best sound in the world?",
+                    "What is your favorite show or movie to Netflix?",
+                    "If you could be any ice cream flavor, \nwhat would you be and why?"};
+
+void setup() {
+  size(1200, 800);
+
+  client = new MQTTClient(this);
+  client.connect("mqtt://test.mosquitto.org");
+  client.subscribe("/uwsocialspace54321");
+
+  //summerAnim = new Animation("name here", 38);
+  //adventureAnim = new Animation("name here", 38);
+  //soundAnim = new Animation("name here", 38);
+  //showAnim = new Animation("name here", 38);
+  //flavorAnim = new Animation("name here", 38);
+
+  // 498, 357
+  
+  font = createFont("Roboto-Regular.ttf", 32);
+  textFont(font);
+}
+
+void keyPressed() {
+    if (keyCode == DOWN) {
+      if (currPrompt != 4) {
+        currPrompt++;
+      } else {
+        currPrompt = 0;
+      }
+    }
+  
+}
+
+void draw() {
+  // #4286f4
+  background(#000000);
+  frameRate(30);
+  fill(#FFFFFF);
+  //drawGrid();
+  // Draws the labels for each installation
+  textSize(12);
+  text("Installation in", 51, 720);
+  text("Installation in", 1056, 720);
+
+  textSize(24);
+  text("Gates", 51, 750);
+  text("Allen", 1056, 750);
+
+  switch(currPrompt) {
+    case 0:
+
+    case 1:
+
+    case 2:
+
+    case 3:
+
+    case 4:
+    
+  }
+
+  println(mouseX + ", " + mouseY + "\n");
+}
+
+// Draws a grid for help with seeing how wide text is
+void drawGrid() {
+  fill(#FFFFFF);
+  stroke(#FFFFFF);
+  for (int i = 0; i < 800; i+=10) {
+    line(0, i, 1200, i);
+  }
+  for (int i = 0; i < 1200; i+=10) {
+    line(i, 0, i, 800);
+  }
+}
+
+void messageReceived(String topic, byte[] payload) {
+  println("new message: " + topic + " - " + new String(payload));
+}
+
+// Class for a word
+
+class Word {
+  String word;
+  int occurrences;
+  int topLeftX;
+  int topLeftY;
+  int botRightX;
+  int botRightY;
+  int size;
+
+  Word(String word) {
+    this.word = word;
+    this.occurrences = 1;
+    updateSize();
+  }
+
+  Word(String word, int occurrences) {
+    this.word = word;
+    this.occurrences = occurrences;
+    updateSize();
+  }
+
+  void updateSize() {
+    // Update the position markers for the word based on what the word is + num of ocurrences
+    topLeftX = 50;
+    topLeftY = 50;
+    size = 20;
+  }
+
+  // draws the word on the canvas with values stored in the fields
+  void drawWord() {
+    textSize(size);
+    text(word, topLeftX, topLeftY);
+  }
+}
+
+// Class for animating a sequence of GIFs
+
+class Animation {
+  PImage[] images;
+  int imageCount;
+  int frame;
+
+  Animation(String imagePrefix, int count) {
+    imageCount = count;
+    images = new PImage[imageCount];
+
+    for (int i = 0; i < imageCount; i++) {
+      // Use nf() to number format 'i' into four digits
+      String filename = imagePrefix + nf(i, 4) + ".gif";
+      images[i] = loadImage(filename);
+    }
+  }
+
+  void display(float xpos, float ypos) {
+    frame = (frame+1) % imageCount;
+    image(images[frame], xpos, ypos);
+  }
+
+  int getWidth() {
+    return images[0].width;
+  }
+}
