@@ -50,7 +50,7 @@ String[] prompts = {"What are your plans for \n          the summer?",
 
 void setup() {
   size(1200, 800);
-  //fullScreen(1);
+  //fullScreen(2);
   client = new MQTTClient(this);
   client.connect("mqtt://test.mosquitto.org");
   client.subscribe("uwsocialspacewordsAllen");

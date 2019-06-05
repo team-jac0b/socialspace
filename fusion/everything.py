@@ -19,7 +19,7 @@ from google.cloud import speech
 from google.cloud.speech import enums
 from google.cloud.speech import types
 
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="Team-Jacob-08f34c6b2ef6.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="Team-Jacob-0efc2ed78470.json"
 
 loop = True
 
@@ -28,7 +28,7 @@ loop = True
 #
 # Camera 0 is the integrated web cam on my netbook
 # Camera 1 is the connected webcam
-camera_port = 0
+camera_port = 1
 
 # Number of frames to throw away while the camera adjusts to light levels
 ramp_frames = 10
@@ -205,10 +205,12 @@ for token in doc:
         if (token.dep_ != "nsubj" and token.dep_ != "dobj"):
             if profanity_check(token_text):
                 print(token_text)
+                client.publish("uwsocialspacewordsGates", token_text, qos=2)
     if (token.pos_ == "VERB" and token.dep_ == "ROOT"):
         if (token_text != "doing" and token_text != "going"):
             if profanity_check(token_text):
                 print(token_text)
+                client.publish("uwsocialspacewordsGates", token_text, qos=2)
     # print(token_text + " " + token.pos_ + " " + token.dep_)
 
     #token_dep = token.dep_
@@ -222,4 +224,4 @@ for token in doc:
 #         #client.publish("uwsocialspacewords", chunk.root.text, qos=2)
 #         print(chunk.root.text)
 
-#client.loop_forever()
+client.loop_forever()
