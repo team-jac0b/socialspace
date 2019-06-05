@@ -1,7 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0245ba0e-755d-4426-913b-6dee0b3153b0" name="Default Changelist" comment="" />
+    <list default="true" id="0245ba0e-755d-4426-913b-6dee0b3153b0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-11.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-13.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-14.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-15.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-16.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-17.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-18.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-19.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-20.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-21.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-22.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-23.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-24.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-25.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-26.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-27.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-28.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-29.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-30.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-31.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-32.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-33.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-34.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-35.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-36.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-37.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-38.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-39.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-40.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-41.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-42.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-43.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-44.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-45.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-46.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-47.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-48.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-49.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-50.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-51.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-52.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-53.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-54.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-55.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-56.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-57.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-58.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-59.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-60.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-61.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-62.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-63.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-64.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-65.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-66.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-67.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-68.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-69.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-70.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-71.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-72.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-73.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-74.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-75.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-76.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-77.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-78.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-79.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-80.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-81.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-82.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-83.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-84.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-85.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-86.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-87.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-88.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-89.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/data/Music/MusicNotes3Converted-9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../demoAnim/demoAnim.pde" beforeDir="false" afterPath="$PROJECT_DIR$/../demoAnim/demoAnim.pde" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/fusion.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/fusion.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/everything.py" beforeDir="false" afterPath="$PROJECT_DIR$/everything.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output.wav" beforeDir="false" afterPath="$PROJECT_DIR$/output.wav" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,8 +113,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/everything.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="371">
-              <caret line="192" column="58" selection-start-line="192" selection-start-column="58" selection-end-line="192" selection-end-column="58" />
+            <state relative-caret-position="751">
+              <caret line="213" column="24" lean-forward="true" selection-start-line="213" selection-start-column="24" selection-end-line="213" selection-end-column="24" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -25,7 +125,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/facial-recognition.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
+            <state relative-caret-position="92">
               <caret line="4" selection-start-line="4" selection-end-line="4" />
             </state>
           </provider>
@@ -34,7 +134,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mic-test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="798">
+            <state relative-caret-position="874">
               <caret line="39" column="10" selection-start-line="5" selection-end-line="39" selection-end-column="10" />
               <folding>
                 <element signature="e#79#93#0" expanded="true" />
@@ -46,7 +146,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/speech_test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="567">
+            <state relative-caret-position="621">
               <caret line="33" column="69" selection-start-line="10" selection-end-line="33" selection-end-column="69" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
@@ -58,7 +158,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jacob-tries-spacy.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
+            <state relative-caret-position="460">
               <caret line="20" selection-start-line="20" selection-end-line="22" selection-end-column="33" />
             </state>
           </provider>
@@ -67,7 +167,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/image-test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
+            <state relative-caret-position="276">
               <caret line="12" selection-end-line="35" selection-end-column="10" />
             </state>
           </provider>
@@ -82,6 +182,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -93,11 +196,12 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="y" value="22" />
     <option name="width" value="1440" />
-    <option name="height" value="813" />
+    <option name="height" value="814" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -106,6 +210,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -231,14 +336,16 @@
       <workItem from="1559078451426" duration="9293000" />
       <workItem from="1559157343724" duration="7844000" />
       <workItem from="1559597642551" duration="4050000" />
+      <workItem from="1559706469391" duration="2780000" />
+      <workItem from="1559760639775" duration="905000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21234000" />
+    <option name="totallyTimeSpent" value="24919000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="813" extended-state="0" />
+    <frame x="-6" y="-6" width="1381" height="895" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.24606581" />
@@ -277,8 +384,8 @@
     <entry file="file://$PROJECT_DIR$/test_image2.png" />
     <entry file="file://$PROJECT_DIR$/everything.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="192" column="58" selection-start-line="192" selection-start-column="58" selection-end-line="192" selection-end-column="58" />
+        <state relative-caret-position="751">
+          <caret line="213" column="24" lean-forward="true" selection-start-line="213" selection-start-column="24" selection-end-line="213" selection-end-column="24" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
@@ -287,14 +394,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/facial-recognition.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
+        <state relative-caret-position="92">
           <caret line="4" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mic-test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="798">
+        <state relative-caret-position="874">
           <caret line="39" column="10" selection-start-line="5" selection-end-line="39" selection-end-column="10" />
           <folding>
             <element signature="e#79#93#0" expanded="true" />
@@ -304,7 +411,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/speech_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
+        <state relative-caret-position="621">
           <caret line="33" column="69" selection-start-line="10" selection-end-line="33" selection-end-column="69" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
@@ -314,14 +421,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/jacob-tries-spacy.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
+        <state relative-caret-position="460">
           <caret line="20" selection-start-line="20" selection-end-line="22" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/image-test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
+        <state relative-caret-position="276">
           <caret line="12" selection-end-line="35" selection-end-column="10" />
         </state>
       </provider>

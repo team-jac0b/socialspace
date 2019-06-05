@@ -6,6 +6,8 @@ import spacy
 
 import paho.mqtt.client as mqtt
 
+from profanity_check import predict, predict_prob
+
 import pyaudio
 import wave
 
@@ -17,7 +19,7 @@ from google.cloud import speech
 from google.cloud.speech import enums
 from google.cloud.speech import types
 
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="/Users/studentuser/Documents/Team-Jacob-044ef9a1def9.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="C:\\Users\\Alex\\Documents\\sp19\\CSE 441\\Team-Jacob-08f34c6b2ef6.json"
 
 loop = True
 
@@ -59,7 +61,7 @@ loop = True
 # # capture object until your script exits
 # del camera
 
-# =============== START AUDIO CAPTURE PART =============== #
+#=============== START AUDIO CAPTURE PART =============== #
 
 # CHUNK = 1024
 # FORMAT = pyaudio.paInt16
@@ -165,6 +167,19 @@ loop = True
 # # manual interface.
 
 
+# =============== BEGIN PROFANITY CHECK PART =============== #
+
+def profanity_check(input):
+    transcriptArray = input.split()
+    processText = True;
+    profanityResult = predict(transcriptArray)
+    for v in profanityResult:
+        if v == 1:
+            return False
+    return True
+
+
+
 # =============== BEGIN TEXT PROCESSING PART =============== #
 
 nlp = spacy.load("en_core_web_sm")
@@ -175,7 +190,7 @@ nlp.add_pipe(merge_ents)
 merge_nc = nlp.create_pipe("merge_noun_chunks")
 nlp.add_pipe(merge_nc)
 
-text = "I’m going to visit my friend down in California, and also go see my friend in Minnesota"
+text = "I’m going to visit my friend down in California, and also go see my friend in Minnesota."
 
 # Process the text
 doc = nlp(text)
@@ -188,10 +203,12 @@ for token in doc:
     #token_pos = token.pos_
     if (token.pos_ == "NOUN" or token.pos_ == "PROPN"):
         if (token.dep_ != "nsubj" and token.dep_ != "dobj"):
-            print(token_text)
+            if profanity_check(token_text):
+                print(token_text)
     if (token.pos_ == "VERB" and token.dep_ == "ROOT"):
         if (token_text != "doing" and token_text != "going"):
-            print(token_text)
+            if profanity_check(token_text):
+                print(token_text)
     # print(token_text + " " + token.pos_ + " " + token.dep_)
 
     #token_dep = token.dep_
