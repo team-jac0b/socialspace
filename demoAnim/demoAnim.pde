@@ -22,6 +22,10 @@ int gatesPeople = 0;
 
 int allenPeople = 0;
 
+float scale = 2.0;
+
+Timer t;
+
 Animation summerAnim, adventureAnim, soundAnim, showAnim, flavorAnim;
 
 Word[] currWordsGates = new Word[9];
@@ -37,22 +41,22 @@ Word[] showWordsAllen = new Word[9];
 Word[] flavorWordsGates = new Word[9];
 Word[] flavorWordsAllen = new Word[9];
 
-int[] leftPositions = {287, 55, 72, 382, 246, 508, 75, 183, 113, 477, 368, 528, 76, 65, 193, 288, 344, 201};
-int[] rightPositions = {681, 85, 843, 366, 772, 581, 862, 186, 685, 508, 618, 185, 874, 463, 1013, 91, 819, 287};
+int[] leftPositions = {287, 55, 72, 382, 246, 508, 75, 183, 113, 457, 200, 568, 176, 125, 193, 318, 130, 251};
+int[] rightPositions = {681, 85, 743, 366, 772, 581, 862, 186, 685, 508, 618, 215, 874, 463, 843, 91, 819, 287};
 
-color[] colors = {#EBB2B5, #8ABABA, #687934, #DD9F4B, #5B75B2, #EADEBB, #CD6557, #A6B896, #EEDED4, #DE7EA8};
+color[] colors = {#E08287, #4FB4B4, #87A138, #DD9F4B, #3972D3, #C9AE60, #CD6557, #3AB698, #CE7C49, #E56FA3};
 
 String[] prompts = {"What are your plans for \n          the summer?",
-                    "What’s an interesting \n adventure you’ve been on?",
-                    "What is the best sound \n in the world?",
-                    "What is your favorite \n show or movie?",
-                    "If you could be any ice cream  \nflavor,what would you be and why?"};
+                    "What’s an interesting adventure \n              you’ve been on?",
+                    "What is the best sound \n         in the world?",
+                    "What is your favorite \n     show or movie?",
+                    "If you could be any ice cream flavor, \n       what would you be and why?"};
 
 void setup() {
-  size(1200, 800);
-  //fullScreen(2);
+  //size(1200, 800);
+  fullScreen(2);
   client = new MQTTClient(this);
-  client.connect("mqtt://test.mosquitto.org");
+  client.connect("mqtt://c4cc8af9:959dcc8e063b9572@broker.shiftr.io");
   client.subscribe("uwsocialspacewordsAllen");
   client.subscribe("uwsocialspacenumsAllen");
   client.subscribe("uwsocialspacewordsGates");
@@ -87,7 +91,9 @@ void setup() {
  
   font = createFont("Roboto-Bold.ttf", 32);
   textFont(font);
-
+  
+  t = new Timer();
+  t.start();
 }
 
 void keyPressed() {
@@ -106,80 +112,80 @@ void keyPressed() {
         currWordsGates[i] = blankWord;
         currWordsAllen[i] = blankWord;
       }
-      //switch(currPrompt) {
-      //  case 0:
-      //    if (currPrompt == 0) {
-      //      for (int i = 0; i < 9; i++) {
-      //        currWords[i] = summerWords[i];
-      //      }
-      //    }
-      //  case 1:
-      //    for (int i = 0; i < 9; i++) {
-      //      currWords[i] = adventureWords[i];
-      //    }
-      //  case 2: 
-      //    for (int i = 0; i < 9; i++) {
-      //      currWords[i] = soundWords[i];
-      //    }
-      //  case 3:
-      //    for (int i = 0; i < 9; i++) {
-      //      currWords[i] = showWords[i];
-      //    }
-      //  case 4:
-      //    for (int i = 0; i < 9; i++) {
-      //      currWords[i] = flavorWords[i];
-      //    }
-      //}
+      
     }
 }
 
 void draw() {
   background(#000000);
   frameRate(30);
+  textSize(50);
+  text(t.minute() + ":" + t.second(), 100, 100);
   // Draws the current prompt
-  textSize(36);
+  textSize(72);
   fill(#FFFFFF);
+  if (t.minute() >= 2) {
+    t.stop();
+    Word blankWord = new Word("", #000000, 0, 0, true);
+    gatesWords = 0;
+    allenWords = 0;
+    if (currPrompt != 4) {
+      currPrompt++;
+    } else {
+      currPrompt = 0;
+    }
+    currWordsGates = new Word[9];
+    currWordsAllen = new Word[9];
+    for (int i = 0; i < 9; i++) {
+      currWordsGates[i] = blankWord;
+      currWordsAllen[i] = blankWord;
+    }
+    t.start();
+  }
   switch(currPrompt) {
     case 0:
-      textSize(36);
+      textSize(72);
       fill(#FFFFFF);
       
       if (currPrompt == 0) {
-        summerAnim.display(450, 350, 300, 225);
-        text(prompts[currPrompt], 410, 320);
+        summerAnim.display(490 * scale, 350 * scale, 300 * scale, 225 * scale);
+        text(prompts[currPrompt], 445 * scale, 320 * scale);
       }
     case 1:
-      textSize(36);
+      textSize(72);
       fill(#FFFFFF);
       
       if (currPrompt == 1) {
-        text(prompts[currPrompt], 450, 300);
-        adventureAnim.display(450, 350, 300, 225);
+        adventureAnim.display(480 * scale, 345 * scale, 320 * scale, 225 * scale);
+        text(prompts[currPrompt], 390 * scale, 320 * scale);
       }
     case 2:
-      textSize(36);
+      textSize(72);
       fill(#FFFFFF);
       
       if (currPrompt == 2) {
-        text(prompts[currPrompt], 450, 300);
-        soundAnim.display(440, 370, 300, 225);
+        soundAnim.display(470 * scale, 350 * scale, 300 * scale, 225 * scale);
+        text(prompts[currPrompt], 450 * scale, 320 * scale);
+
       }
     case 3:
-      textSize(36);
+      textSize(72);
       fill(#FFFFFF);
       
       
       if (currPrompt == 3) {
-        text(prompts[currPrompt], 450, 300);
-        showAnim.display(440, 370, 300, 225);
+        showAnim.display(480 * scale, 390 * scale, 300 * scale * 0.8, 225 * scale * 0.8);
+        text(prompts[currPrompt], 470 * scale, 320 * scale);
+        
       }
     case 4:
-      textSize(36);
+      textSize(72);
       fill(#FFFFFF);
       
       if (currPrompt == 4) {
-        text(prompts[currPrompt], 450, 300);
-        flavorAnim.display(450, 350, 300, 225);
+        flavorAnim.display(520 * scale, 400 * scale, 300 * scale * 0.8, 225 * scale * 0.8);
+        text(prompts[currPrompt], 350 * scale, 320 * scale);
+        
       }
   }
   
@@ -190,35 +196,35 @@ void draw() {
 
   //drawGrid();
   // Draws the labels for each installation
-  textSize(12);
-  fill(colors[2 * currPrompt]);
-  text("Responses in", 51, 720);
-  
-  fill(colors[2 * currPrompt + 1]);
-  text("Responses in", 1086, 720);
-
   textSize(24);
   fill(colors[2 * currPrompt]);
-  text("Gates", 51, 750);
+  text("Responses in", 51 * scale, 720 * scale);
   
   fill(colors[2 * currPrompt + 1]);
-  text("Allen", 1086, 750);
+  text("Responses in", 1150 * scale, 720 * scale);
+
+  textSize(48);
+  fill(colors[2 * currPrompt]);
+  text("Gates", 55 * scale, 750 * scale);
   
-  image(bench, 147, 730, width/8, height/40);
-  image(bench, 880, 730, width/8, height/40);
+  fill(colors[2 * currPrompt + 1]);
+  text("Allen", 1160 * scale, 750 * scale);
+  
+  image(bench, 147 * scale, 730 * scale , width/8, height/40);
+  image(bench, 965 * scale, 730 * scale, width/8, height/40);
   
   for (int i = 0; i < gatesPeople; i++) {
     person.disableStyle();
     fill(colors[2 * currPrompt]);
     stroke(colors[2 * currPrompt]);
-    shape(person, 165 + (i * 25), 700);
+    shape(person, (165 + (i * 27)) * scale, 700 * scale, 30, 100);
   }
   
   for (int i = 0; i < allenPeople; i++) {
     person.disableStyle();
     fill(colors[2 * currPrompt + 1]);
     stroke(colors[2 * currPrompt + 1]);
-    shape(person, 890 + (i * 25), 700);
+    shape(person, (985 + (i * 27)) * scale, 700 * scale, 30, 100);
   }
 
   //println(mouseX + ", " + mouseY + "\n");
@@ -235,6 +241,10 @@ void drawGrid() {
   for (int i = 0; i < 1200; i+=10) {
     line(i, 0, i, 800);
   }
+}
+
+void mouseClicked() {
+  println(mouseX + ", " + mouseY + "\n");
 }
 
 void messageReceived(String topic, byte[] payload) {
@@ -283,6 +293,15 @@ void messageReceived(String topic, byte[] payload) {
       }
     }
   } else if (topic.equals("uwsocialspacewordsAllen")) {
+    Boolean notDuplicate = true;
+    for (Word w: currWordsGates) {
+      String input = new String(payload);
+      if (input.equals(w.word)) {
+        w.updateSize();
+        notDuplicate = false;
+      }
+    }
+    if (notDuplicate) {
      switch(currPrompt) {
       case 0:
         currWordsAllen[allenWords] = new Word(new String(payload), colors[2 * currPrompt + 1], allenWords * 2, (allenWords * 2) + 1, false);
@@ -299,11 +318,12 @@ void messageReceived(String topic, byte[] payload) {
       case 4:
         currWordsAllen[allenWords] = new Word(new String(payload), colors[2 * currPrompt + 1], allenWords * 2, (allenWords * 2) + 1, false);
         flavorWordsAllen[allenWords] = new Word(new String(payload), colors[2 * currPrompt + 1], allenWords * 2, (allenWords * 2) + 1, false);
-    }
-    if (allenWords != 8) {
-      allenWords++;
-    } else {
-      allenWords = 0;
+      }
+      if (allenWords != 8) {
+        allenWords++;
+      } else {
+        allenWords = 0;
+      }
     }
   } else {
     // Do nothing
@@ -320,6 +340,8 @@ class Word {
   int botRightX;
   int botRightY;
   int size;
+  int yModifier;
+  int xModifier;
   color drawColor;
   Boolean isGates;
 
@@ -331,11 +353,14 @@ class Word {
     if (!isGates) {
       this.topLeftX = rightPositions[x];
       this.topLeftY = rightPositions[y];
+      this.xModifier = 500;
     } else {
       this.topLeftX = leftPositions[x];
       this.topLeftY = leftPositions[y];
+      this.xModifier = 0;
     }
-    this.size = 26;
+    this.yModifier = 0;
+    this.size = 52;
     //updateSize();
   }
 
@@ -350,14 +375,15 @@ class Word {
     // Update the position markers for the word based on what the word is + num of ocurrences
     //topLeftX = 50;
     //topLeftY = 50;
-    this.size += 10;
+    this.size += 20;
+    this.yModifier += 10;
   }
 
   // draws the word on the canvas with values stored in the fields
   void drawWord() {
     textSize(size);
     fill(drawColor);
-    text(word, topLeftX, topLeftY);
+    text(word, topLeftX * 2 + xModifier, topLeftY * 2 + yModifier);
   }
 }
 
@@ -387,4 +413,39 @@ class Animation {
   int getWidth() {
     return images[0].width;
   }
+}
+
+
+// This class based on code found here: http://www.goldb.org/stopwatchjava.html
+class Timer {
+  int startTime = 0, stopTime = 0, maxTime = 120000;
+  boolean running = false;  
+  
+    void start() {
+        startTime = millis();
+        running = true;
+    }
+    void stop() {
+        stopTime = millis();
+        running = false;
+    }
+    int getElapsedTime() {
+        int elapsed;
+        if (running) {
+             elapsed = (millis() - startTime);
+        }
+        else {
+            elapsed = (stopTime - startTime);
+        }
+        return elapsed;
+    }
+    int second() {
+      return (getElapsedTime() / 1000) % 60;
+    }
+    int minute() {
+      return (getElapsedTime() / (1000*60)) % 60;
+    }
+    int hour() {
+      return (getElapsedTime() / (1000*60*60)) % 24;
+    }
 }
