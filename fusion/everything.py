@@ -8,6 +8,8 @@ import spacy
 
 import paho.mqtt.client as mqtt
 
+import time;
+
 from profanity_check import predict, predict_prob
 
 import pyaudio
@@ -379,6 +381,7 @@ def main():
     while True:
         cameraCapture()
         faceRecog(clientMQTT)
+        time.sleep(5)
         # with MicrophoneStream(RATE, CHUNK) as stream:
         #     audio_generator = stream.generator()
         #     requests = (types.StreamingRecognizeRequest(audio_content=content)

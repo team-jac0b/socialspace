@@ -25,11 +25,83 @@ from google.cloud.speech import enums
 from google.cloud.speech import types
 
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="Team-Jacob-0efc2ed78470.json"
+#
+# # Audio recording parameters
+# RATE = 16000
+# CHUNK = int(RATE / 10)  # 100ms
 
-# Audio recording parameters
-RATE = 16000
-CHUNK = int(RATE / 10)  # 100ms
+#=============== START AUDIO CAPTURE PART =============== #
 
+def audio_capture():
+    CHUNK = 1024
+    FORMAT = pyaudio.paInt16
+    CHANNELS = 2
+    RATE = 44100
+    RECORD_SECONDS = 10
+    WAVE_OUTPUT_FILENAME = "output.wav"
+
+    p = pyaudio.PyAudio()
+
+    stream = p.open(format=FORMAT,
+                    channels=CHANNELS,
+                    rate=RATE,
+                    input=True,
+                    frames_per_buffer=CHUNK)
+
+    print("* recording")
+
+    frames = []
+
+    for i in range(0, int(RATE / CHUNK * RECORD_SECONDS)):
+        data = stream.read(CHUNK)
+        frames.append(data)
+
+    print("* done recording")
+
+    stream.stop_stream()
+    stream.close()
+    p.terminate()
+
+    wf = wave.open(WAVE_OUTPUT_FILENAME, 'wb')
+    wf.setnchannels(CHANNELS)
+    wf.setsampwidth(p.get_sample_size(FORMAT))
+    wf.setframerate(RATE)
+    wf.writeframes(b''.join(frames))
+    wf.close()
+
+# =============== START SPEECH TO TEXT PART =============== #
+
+def speech_to_text():
+    # Instantiates a client
+    client = speech.SpeechClient()
+
+    # The name of the audio file to transcribe
+    file_name = os.path.join(
+        os.path.dirname(__file__),
+        'output.wav')
+
+    # Loads the audio into memory
+    with io.open(file_name, 'rb') as audio_file:
+        content = audio_file.read()
+        audio = types.RecognitionAudio(content=content)
+
+    config = types.RecognitionConfig(
+        encoding=enums.RecognitionConfig.AudioEncoding.LINEAR16,
+        sample_rate_hertz=44100,
+        audio_channel_count=2,
+        language_code='en-US',
+        enable_automatic_punctuation=True)
+
+    # Detects speech in the audio file
+    response = client.recognize(config, audio)
+
+    transcript = "";
+
+    for result in response.results:
+        print('Transcript: {}'.format(result.alternatives[0].transcript))
+        transcript += result.alternatives[0].transcript
+
+    return transcript;
 
 # =============== BEGIN PROFANITY CHECK PART =============== #
 
@@ -255,18 +327,21 @@ def main():
     # manual interface.
     while True:
 
-        with MicrophoneStream(RATE, CHUNK) as stream:
-            audio_generator = stream.generator()
-            requests = (types.StreamingRecognizeRequest(audio_content=content)
-                        for content in audio_generator)
-
-            responses = client.streaming_recognize(streaming_config, requests)
-
-            # Now, put the transcription responses to use.
-            try:
-                listen_print_loop(responses, clientMQTT)
-            except Exception as exception:
-                print("Exception handle : Exceeded maximum allowed stream duration")
+        # with MicrophoneStream(RATE, CHUNK) as stream:
+        #     audio_generator = stream.generator()
+        #     requests = (types.StreamingRecognizeRequest(audio_content=content)
+        #                 for content in audio_generator)
+        #
+        #     responses = client.streaming_recognize(streaming_config, requests)
+        #
+        #     # Now, put the transcription responses to use.
+        #     try:
+        #         listen_print_loop(responses, clientMQTT)
+        #     except Exception as exception:
+        #         print("Exception handle : Exceeded maximum allowed stream duration")
+        audio_capture()
+        transcript = speech_to_text()
+        process_words(transcript, clientMQTT)
 
 
 if __name__ == '__main__':

@@ -89,11 +89,11 @@ void setup() {
   
   person = loadShape("Person.svg");
   
-  //onePeople = loadShape("1.svg");
-  //twoPeople = loadShape("2.svg");
-  //threePeople = loadShape("3.svg");
-  //fourPeople = loadShape("4.svg");
-  //fivePeople = loadShape("5.svg");
+  //onePeople = loadShape("pizza_1.svg");
+  //twoPeople = loadShape("pizza_2.svg");
+  //threePeople = loadShape("pizza_3.svg");
+  //fourPeople = loadShape("pizza_4.svg");
+  //fivePeople = loadShape("pizza_5.svg");
   
   summerAnim = new Animation("Floatie/Floatie2Converted-", 90);
   adventureAnim = new Animation("Mountain/mountainsmall-", 100);
@@ -111,6 +111,7 @@ void setup() {
 void keyPressed() {
     Word blankWord = new Word("", #000000, 0, 0, true);
     if (keyCode == DOWN) {
+      t.stop();
       gatesWords = 0;
       allenWords = 0;
       if (currPrompt != 4) {
@@ -124,6 +125,7 @@ void keyPressed() {
         currWordsGates[i] = blankWord;
         currWordsAllen[i] = blankWord;
       }
+      t.start();
       
     }
 }
@@ -131,11 +133,13 @@ void keyPressed() {
 void draw() {
   background(#000000);
   frameRate(30);
-  textSize(50);
-  text(t.minute() + ":" + t.second(), 100, 100);
+  textSize(32);
+  //text(t.minute() + ":" + t.second(), 100, 100);
   stroke(#FFFFFF);
   strokeWeight(16);
-  line(300, 35, 300 + (((float)t.getElapsedTime() / 120000) * 2000) , 35);
+  fill(#FFFFFF);
+  text("Next Prompt:", 80, 45);
+  line(300, 35, 2300 - (((float)t.getElapsedTime() / 120000) * 2000) , 35);
   // Draws the current prompt
   textSize(72);
   fill(#FFFFFF);
