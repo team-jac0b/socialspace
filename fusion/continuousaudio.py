@@ -253,16 +253,20 @@ def main():
     # handles reconnecting.
     # Other loop*() functions are available that give a threaded interface and a
     # manual interface.
+    while True:
 
-    with MicrophoneStream(RATE, CHUNK) as stream:
-        audio_generator = stream.generator()
-        requests = (types.StreamingRecognizeRequest(audio_content=content)
-                    for content in audio_generator)
+        with MicrophoneStream(RATE, CHUNK) as stream:
+            audio_generator = stream.generator()
+            requests = (types.StreamingRecognizeRequest(audio_content=content)
+                        for content in audio_generator)
 
-        responses = client.streaming_recognize(streaming_config, requests)
+            responses = client.streaming_recognize(streaming_config, requests)
 
-        # Now, put the transcription responses to use.
-        listen_print_loop(responses, clientMQTT)
+            # Now, put the transcription responses to use.
+            try:
+                listen_print_loop(responses, clientMQTT)
+            except Exception as exception:
+                print("Exception handle : Exceeded maximum allowed stream duration")
 
 
 if __name__ == '__main__':

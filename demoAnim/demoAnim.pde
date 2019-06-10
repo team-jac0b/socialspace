@@ -12,6 +12,12 @@ PImage music;
 PImage bench;
 PShape person;
 
+PShape onePeople;
+PShape twoPeople;
+PShape threePeople;
+PShape fourPeople;
+PShape fivePeople;
+
 int currPrompt; // 0 - Summer, 1 - Adventure, 2 - Sound, 3 - Show, 4 - Flavor
 
 int gatesWords;
@@ -83,6 +89,12 @@ void setup() {
   
   person = loadShape("Person.svg");
   
+  //onePeople = loadShape("1.svg");
+  //twoPeople = loadShape("2.svg");
+  //threePeople = loadShape("3.svg");
+  //fourPeople = loadShape("4.svg");
+  //fivePeople = loadShape("5.svg");
+  
   summerAnim = new Animation("Floatie/Floatie2Converted-", 90);
   adventureAnim = new Animation("Mountain/mountainsmall-", 100);
   soundAnim = new Animation("Music/MusicNotes4Converted-", 90);
@@ -121,6 +133,9 @@ void draw() {
   frameRate(30);
   textSize(50);
   text(t.minute() + ":" + t.second(), 100, 100);
+  stroke(#FFFFFF);
+  strokeWeight(16);
+  line(300, 35, 300 + (((float)t.getElapsedTime() / 120000) * 2000) , 35);
   // Draws the current prompt
   textSize(72);
   fill(#FFFFFF);
