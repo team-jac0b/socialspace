@@ -12,11 +12,65 @@ PImage music;
 PImage bench;
 PShape person;
 
-PShape onePeople;
-PShape twoPeople;
-PShape threePeople;
-PShape fourPeople;
-PShape fivePeople;
+PImage bSummer1A;
+PImage bSummer2A;
+PImage bSummer3A;
+PImage bSummer4A;
+PImage bSummer5A;
+
+PImage bSummer1B;
+PImage bSummer2B;
+PImage bSummer3B;
+PImage bSummer4B;
+PImage bSummer5B;
+
+PImage bAdv1A;
+PImage bAdv2A;
+PImage bAdv3A;
+PImage bAdv4A;
+PImage bAdv5A;
+
+PImage bAdv1B;
+PImage bAdv2B;
+PImage bAdv3B;
+PImage bAdv4B;
+PImage bAdv5B;
+
+PImage bSound1A;
+PImage bSound2A;
+PImage bSound3A;
+PImage bSound4A;
+PImage bSound5A;
+
+PImage bSound1B;
+PImage bSound2B;
+PImage bSound3B;
+PImage bSound4B;
+PImage bSound5B;
+
+PImage bShow1A;
+PImage bShow2A;
+PImage bShow3A;
+PImage bShow4A;
+PImage bShow5A;
+
+PImage bShow1B;
+PImage bShow2B;
+PImage bShow3B;
+PImage bShow4B;
+PImage bShow5B;
+
+PImage bCream1A;
+PImage bCream2A;
+PImage bCream3A;
+PImage bCream4A;
+PImage bCream5A;
+
+PImage bCream1B;
+PImage bCream2B;
+PImage bCream3B;
+PImage bCream4B;
+PImage bCream5B;
 
 int currPrompt; // 0 - Summer, 1 - Adventure, 2 - Sound, 3 - Show, 4 - Flavor
 
@@ -89,11 +143,67 @@ void setup() {
   
   person = loadShape("Person.svg");
   
-  //onePeople = loadShape("pizza_1.svg");
-  //twoPeople = loadShape("pizza_2.svg");
-  //threePeople = loadShape("pizza_3.svg");
-  //fourPeople = loadShape("pizza_4.svg");
-  //fivePeople = loadShape("pizza_5.svg");
+  bSummer1A = loadImage("benchsummer/summer1@2x.png");
+  bSummer2A = loadImage("benchsummer/summer2@2x.png");
+  bSummer3A = loadImage("benchsummer/summer3@2x.png");
+  bSummer4A = loadImage("benchsummer/summer4@2x.png");
+  bSummer5A = loadImage("benchsummer/summer5@2x.png");
+  
+  bAdv1A = loadImage("benchAdv2/adventure1a@2x.png");
+  bAdv2A = loadImage("benchAdv2/adventure2a@2x.png");
+  bAdv3A = loadImage("benchAdv2/adventure3a@2x.png");
+  bAdv4A = loadImage("benchAdv2/adventure4a@2x.png");
+  bAdv5A = loadImage("benchAdv2/adventure5a@2x.png");
+  
+  bSound1A = loadImage("benchSound/sound1a@2x.png");
+  bSound2A = loadImage("benchSound/sound2a@2x.png");
+  bSound3A = loadImage("benchSound/sound3a@2x.png");
+  bSound4A = loadImage("benchSound/sound4a@2x.png");
+  bSound5A = loadImage("benchSound/sound5a@2x.png");
+
+  bShow1A = loadImage("benchShow/movie1a@2x.png");
+  bShow2A = loadImage("benchShow/movie2a@2x.png");
+  bShow3A = loadImage("benchShow/movie3a@2x.png");
+  bShow4A = loadImage("benchShow/movie4a@2x.png");
+  bShow5A = loadImage("benchShow/movie5a@2x.png");
+  
+  bCream1A = loadImage("benchCream/icecream1a@2x.png");
+  bCream2A = loadImage("benchCream/icecream2a@2x.png");
+  bCream3A = loadImage("benchCream/icecream3a@2x.png");
+  bCream4A = loadImage("benchCream/icecream4a@2x.png");
+  bCream5A = loadImage("benchCream/icecream5a@2x.png");
+  
+  // ALLEN ISH
+  
+  bSummer1B = loadImage("benchsummer2/summer1a@2x.png");
+  bSummer2B = loadImage("benchsummer2/summer2a@2x.png");
+  bSummer3B = loadImage("benchsummer2/summer3a@2x.png");
+  bSummer4B = loadImage("benchsummer2/summer4a@2x.png");
+  bSummer5B = loadImage("benchsummer2/summer5a@2x.png");
+  
+  bAdv1B = loadImage("benchAdv/adventure1@2x.png");
+  bAdv2B = loadImage("benchAdv/adventure2@2x.png");
+  bAdv3B = loadImage("benchAdv/adventure3@2x.png");
+  bAdv4B = loadImage("benchAdv/adventure4@2x.png");
+  bAdv5B = loadImage("benchAdv/adventure5@2x.png");
+  
+  bSound1B = loadImage("benchSound2/sound1@2x.png");
+  bSound2B = loadImage("benchSound2/sound2@2x.png");
+  bSound3B = loadImage("benchSound2/sound3@2x.png");
+  bSound4B = loadImage("benchSound2/sound4@2x.png");
+  bSound5B = loadImage("benchSound2/sound5@2x.png");
+
+  bShow1B = loadImage("benchShow2/movie1@2x.png");
+  bShow2B = loadImage("benchShow2/movie2@2x.png");
+  bShow3B = loadImage("benchShow2/movie3@2x.png");
+  bShow4B = loadImage("benchShow2/movie4@2x.png");
+  bShow5B = loadImage("benchShow2/movie5@2x.png");
+  
+  bCream1B = loadImage("benchCream2/iceream1@2x.png");
+  bCream2B = loadImage("benchCream2/iceream2@2x.png");
+  bCream3B = loadImage("benchCream2/iceream3@2x.png");
+  bCream4B = loadImage("benchCream2/iceream4@2x.png");
+  bCream5B = loadImage("benchCream2/iceream5@2x.png");
   
   summerAnim = new Animation("Floatie/Floatie2Converted-", 90);
   adventureAnim = new Animation("Mountain/mountainsmall-", 100);
@@ -229,22 +339,184 @@ void draw() {
   fill(colors[2 * currPrompt + 1]);
   text("Allen", 1160 * scale, 750 * scale);
   
-  image(bench, 147 * scale, 730 * scale , width/8, height/40);
-  image(bench, 965 * scale, 730 * scale, width/8, height/40);
-  
-  for (int i = 0; i < gatesPeople; i++) {
-    person.disableStyle();
-    fill(colors[2 * currPrompt]);
-    stroke(colors[2 * currPrompt]);
-    shape(person, (165 + (i * 27)) * scale, 700 * scale, 30, 100);
+  if (currPrompt == 0) {
+    if (gatesPeople == 0) {
+      image(bench, 147 * scale, 730 * scale , width/8, height/40);
+    } else if (gatesPeople == 1 && currPrompt == 0) {
+      image(bSummer1A, 80 * scale, 655 * scale , width/4, height/8);
+    } else if (gatesPeople == 2 && currPrompt == 0) {
+      image(bSummer2A, 80 * scale, 655 * scale , width/4, height/8);
+    } else if (gatesPeople == 3 && currPrompt == 0) {
+      image(bSummer3A, 80 * scale, 655 * scale , width/4, height/8);
+    } else if (gatesPeople == 4 && currPrompt == 0) {
+      image(bSummer4A, 80 * scale, 655 * scale , width/4, height/8);
+    } else if (gatesPeople == 5 && currPrompt == 0) {
+      image(bSummer5A, 80 * scale, 655 * scale , width/4, height/8);
+    }
   }
   
-  for (int i = 0; i < allenPeople; i++) {
-    person.disableStyle();
-    fill(colors[2 * currPrompt + 1]);
-    stroke(colors[2 * currPrompt + 1]);
-    shape(person, (985 + (i * 27)) * scale, 700 * scale, 30, 100);
+  if (currPrompt == 0) {
+    if (allenPeople == 0) {
+      image(bench, 965 * scale, 730 * scale , width/8, height/40);
+    } else if (allenPeople == 1 && currPrompt == 0) {
+      image(bSummer1B, 885 * scale, 655 * scale , width/4, height/8);
+    } else if (allenPeople == 2 && currPrompt == 0) {
+      image(bSummer2B, 885 * scale, 655 * scale , width/4, height/8);
+    } else if (allenPeople == 3 && currPrompt == 0) {
+      image(bSummer3B, 885 * scale, 655 * scale , width/4, height/8);
+    } else if (allenPeople == 4 && currPrompt == 0) {
+      image(bSummer4B, 885 * scale, 655 * scale , width/4, height/8);
+    } else if (allenPeople == 5 && currPrompt == 0) {
+      image(bSummer5B, 885 * scale, 655 * scale , width/4, height/8);
+    }
   }
+  
+  if (currPrompt == 1) {
+    if (gatesPeople == 0) {
+      image(bench, 147 * scale, 730 * scale , width/8, height/40);
+    } else if (gatesPeople == 1 && currPrompt == 1) {
+      image(bAdv1A, 80 * scale, 655 * scale , width/4, height/8);
+    } else if (gatesPeople == 2 && currPrompt == 1) {
+      image(bAdv2A, 80 * scale, 655 * scale , width/4, height/8);
+    } else if (gatesPeople == 3 && currPrompt == 1) {
+      image(bAdv3A, 80 * scale, 655 * scale , width/4, height/8);
+    } else if (gatesPeople == 4 && currPrompt == 1) {
+      image(bAdv4A, 80 * scale, 655 * scale , width/4, height/8);
+    } else if (gatesPeople == 5 && currPrompt == 1) {
+      image(bAdv5A, 80 * scale, 655 * scale , width/4, height/8);
+    }
+  }
+  
+  if (currPrompt == 1) {
+    if (allenPeople == 0) {
+      image(bench, 965 * scale, 730 * scale , width/8, height/40);
+    } else if (allenPeople == 1 && currPrompt == 1) {
+      image(bAdv1B, 885 * scale, 655 * scale , width/4, height/8);
+    } else if (allenPeople == 2 && currPrompt == 1) {
+      image(bAdv2B, 885 * scale, 655 * scale , width/4, height/8);
+    } else if (allenPeople == 3 && currPrompt == 1) {
+      image(bAdv3B, 885 * scale, 655 * scale , width/4, height/8);
+    } else if (allenPeople == 4 && currPrompt == 1) {
+      image(bAdv4B, 885 * scale, 655 * scale , width/4, height/8);
+    } else if (allenPeople == 5 && currPrompt == 1) {
+      image(bAdv5B, 885 * scale, 655 * scale , width/4, height/8);
+    }
+  }
+  
+  if (currPrompt == 2) {
+    if (gatesPeople == 0) {
+      image(bench, 147 * scale, 730 * scale , width/8, height/40);
+    } else if (gatesPeople == 1 && currPrompt == 2) {
+      image(bSound1A, 80 * scale, 655 * scale , width/4, height/8);
+    } else if (gatesPeople == 2 && currPrompt == 2) {
+      image(bSound2A, 80 * scale, 655 * scale , width/4, height/8);
+    } else if (gatesPeople == 3 && currPrompt == 2) {
+      image(bSound3A, 80 * scale, 655 * scale , width/4, height/8);
+    } else if (gatesPeople == 4 && currPrompt == 2) {
+      image(bSound4A, 80 * scale, 655 * scale , width/4, height/8);
+    } else if (gatesPeople == 5 && currPrompt == 2) {
+      image(bSound5A, 80 * scale, 655 * scale , width/4, height/8);
+    }
+  }
+  
+  if (currPrompt == 2) {
+    if (allenPeople == 0) {
+      image(bench, 965 * scale, 730 * scale , width/8, height/40);
+    } else if (allenPeople == 1 && currPrompt == 2) {
+      image(bSound1B, 885 * scale, 655 * scale , width/4, height/8);
+    } else if (allenPeople == 2 && currPrompt == 2) {
+      image(bSound2B, 885 * scale, 655 * scale , width/4, height/8);
+    } else if (allenPeople == 3 && currPrompt == 2) {
+      image(bSound3B, 885 * scale, 655 * scale , width/4, height/8);
+    } else if (allenPeople == 4 && currPrompt == 2) {
+      image(bSound4B, 885 * scale, 655 * scale , width/4, height/8);
+    } else if (allenPeople == 5 && currPrompt == 2) {
+      image(bSound5B, 885 * scale, 655 * scale , width/4, height/8);
+    }
+  }
+  
+   if (currPrompt == 3) {
+    if (gatesPeople == 0) {
+      image(bench, 147 * scale, 730 * scale , width/8, height/40);
+    } else if (gatesPeople == 1 && currPrompt == 3) {
+      image(bShow1A, 80 * scale, 655 * scale , width/4, height/8);
+    } else if (gatesPeople == 2 && currPrompt == 3) {
+      image(bShow2A, 80 * scale, 655 * scale , width/4, height/8);
+    } else if (gatesPeople == 3 && currPrompt == 3) {
+      image(bShow3A, 80 * scale, 655 * scale , width/4, height/8);
+    } else if (gatesPeople == 4 && currPrompt == 3) {
+      image(bShow4A, 80 * scale, 655 * scale , width/4, height/8);
+    } else if (gatesPeople == 5 && currPrompt == 3) {
+      image(bShow5A, 80 * scale, 655 * scale , width/4, height/8);
+    }
+  }
+  
+    
+  if (currPrompt == 3) {
+    if (allenPeople == 0) {
+      image(bench, 965 * scale, 730 * scale , width/8, height/40);
+    } else if (allenPeople == 1 && currPrompt == 3) {
+      image(bShow1B, 885 * scale, 655 * scale , width/4, height/8);
+    } else if (allenPeople == 2 && currPrompt == 3) {
+      image(bShow2B, 885 * scale, 655 * scale , width/4, height/8);
+    } else if (allenPeople == 3 && currPrompt == 3) {
+      image(bShow3B, 885 * scale, 655 * scale , width/4, height/8);
+    } else if (allenPeople == 4 && currPrompt == 3) {
+      image(bShow4B, 885 * scale, 655 * scale , width/4, height/8);
+    } else if (allenPeople == 5 && currPrompt == 3) {
+      image(bShow5B, 885 * scale, 655 * scale , width/4, height/8);
+    }
+  }
+  
+  if (currPrompt == 4) {
+    if (gatesPeople == 0) {
+      image(bench, 147 * scale, 730 * scale , width/8, height/40);
+    } else if (gatesPeople == 1 && currPrompt == 4) {
+      image(bCream1A, 80 * scale, 655 * scale , width/4, height/8);
+    } else if (gatesPeople == 2 && currPrompt == 4) {
+      image(bCream2A, 80 * scale, 655 * scale , width/4, height/8);
+    } else if (gatesPeople == 3 && currPrompt == 4) {
+      image(bCream3A, 80 * scale, 655 * scale , width/4, height/8);
+    } else if (gatesPeople == 4 && currPrompt == 4) {
+      image(bCream4A, 80 * scale, 655 * scale , width/4, height/8);
+    } else if (gatesPeople == 5 && currPrompt == 4) {
+      image(bCream5A, 80 * scale, 655 * scale , width/4, height/8);
+    }
+  }
+  
+  if (currPrompt == 4) {
+    if (allenPeople == 0) {
+      image(bench, 965 * scale, 730 * scale , width/8, height/40);
+    } else if (allenPeople == 1 && currPrompt == 4) {
+      image(bCream1B, 885 * scale, 655 * scale , width/4, height/8);
+    } else if (allenPeople == 2 && currPrompt == 4) {
+      image(bCream2B, 885 * scale, 655 * scale , width/4, height/8);
+    } else if (allenPeople == 3 && currPrompt == 4) {
+      image(bCream3B, 885 * scale, 655 * scale , width/4, height/8);
+    } else if (allenPeople == 4 && currPrompt == 4) {
+      image(bCream4B, 885 * scale, 655 * scale , width/4, height/8);
+    } else if (allenPeople == 5 && currPrompt == 4) {
+      image(bCream5B, 885 * scale, 655 * scale , width/4, height/8);
+    }
+  }
+  
+  
+  //image(bench, 147 * scale, 730 * scale , width/8, height/40);
+  //image(bench, 965 * scale, 730 * scale, width/8, height/40);
+  
+  //for (int i = 0; i < gatesPeople; i++) {
+  //  person.disableStyle();
+  //  fill(colors[2 * currPrompt]);
+  //  stroke(colors[2 * currPrompt]);
+  //  shape(person, (165 + (i * 27)) * scale, 700 * scale, 30, 100);
+  //}
+  
+  //for (int i = 0; i < allenPeople; i++) {
+  //  person.disableStyle();
+  //  fill(colors[2 * currPrompt + 1]);
+  //  stroke(colors[2 * currPrompt + 1]);
+  //  shape(person, (985 + (i * 27)) * scale, 700 * scale, 30, 100);
+  //}
 
   //println(mouseX + ", " + mouseY + "\n");
   // 340, 250    850, 550
